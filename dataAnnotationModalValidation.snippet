@@ -33,9 +33,9 @@
              <!-- Create any declarations that we use in the snippet. -->
             <Declarations>
               <Literal>
-                <ID>DataType</ID>
+                <ID>DataTypeText</ID>
                 <ToolTip>Specify the datatype of a property.</ToolTip>
-                <Default>DataType</Default>
+                <Default>DataTypeText</Default>
               </Literal>
               <Literal>
                 <ID>DisplayName</ID>
@@ -48,9 +48,9 @@
                 <Default>DisplayFormat</Default>
               </Literal>
               <Literal>
-                <ID>Required</ID>
+                <ID>RequiredText</ID>
                 <ToolTip>Specify a property as required..</ToolTip>
-                <Default>Required</Default>
+                <Default>RequiredText</Default>
               </Literal>
               <Literal>
                 <ID>ReqularExpression</ID>
@@ -88,16 +88,16 @@
             <Code Language="CSharp" Kind="any">
                 <![CDATA[ 
 
-	[Bind(Exclude = "$Bind")]
-	[Required(ErrorMessage = "$Required")] 
-	[DataType(DataType.$DataType)]
-	[Display(Name = "$DisplayName")]
-	[MaxLength(50)]
-	[RegularExpression(@"$ReqularExpression", ErrorMessage = "Please enter correct email")]
-	[ScaffoldColumn(false)]
-	[StringLength(100,MinimumLength=3)]
-	[Range(3000, 10000000,ErrorMessage = "$Range")]
-	
+            [Bind(Exclude = $Bind)]
+            [Required(ErrorMessage = "$RequiredText")]
+            [DataType(DataType.$DataTypeText)]
+            [Display(Name = "$DisplayName")]
+            [MaxLength(50)]
+            [RegularExpression("$ReqularExpression", ErrorMessage = "Please enter correct email")]
+            [ScaffoldColumn(false)]
+            [StringLength(100, MinimumLength=3)]
+            [Range(3000, 10000000,ErrorMessage = "$Range")]
+
                 ]]>
             </Code>
         </Snippet>

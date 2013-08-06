@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+
+        <!-- The header contains information describing the snippet. -->
+        <Header>
+          
+          <!-- The Title of the snippet, this will be shown in the snippets manager. -->
+          <Title>View modal Presenting</Title>
+          
+          <!-- The description of the snippet. -->
+          <Description>Language Razor.</Description>
+          
+          <!-- The author of the snippet. -->
+          <Author>Luis Oscátegui</Author>
+          
+          <!-- The set of characters that must be keyed in to insert the snippet. -->
+          <Shortcut>viewModalFormPresenting</Shortcut>
+          
+          <!-- A URL for more help. -->
+          <HelpUrl>http://domain.com</HelpUrl>
+          
+          <!-- The set of snippet types we're dealing with - either Expansion or -->
+          <!-- <SnippetTypes>
+            <SnippetType>Expansion</SnippetType>
+          </SnippetTypes> -->          
+          
+        </Header>
+      
+        <!-- Now we have the snippet itself. -->
+        <Snippet>
+
+             <!-- Create any declarations that we use in the snippet. -->
+            <Declarations>
+              <Literal>
+                <ID>PropertyName</ID>
+                <ToolTip>Enter the property name</ToolTip>
+                <Default>PropertyName</Default>
+              </Literal>
+              <Literal>
+                <ID>action</ID>
+                <ToolTip>Enter the action of the form</ToolTip>
+                <Default>action</Default>
+              </Literal>
+              <Literal>
+                <ID>controller</ID>
+                <ToolTip>Enter the controller of the form</ToolTip>
+                <Default>controller</Default>
+              </Literal>
+              <Literal>
+                <ID>formmethod</ID>
+                <ToolTip>Enter the method of the form</ToolTip>
+                <Default>formmethod</Default>
+              </Literal>
+              <Literal>
+                <ID>formId</ID>
+                <ToolTip>Enter the ID of the form</ToolTip>
+                <Default>formId</Default>
+              </Literal>
+              <Literal>
+                <ID>classname</ID>
+                <ToolTip>Enter the Class of the form</ToolTip>
+                <Default>classname</Default>
+              </Literal>
+            </Declarations>
+
+            <!-- Sepecify the code language and the actual snippet content. -->
+            <Code Language="CSharp" Kind="any">
+                <![CDATA[
+
+                    // your snnippet -- Example 
+@using (Html.BeginForm("$action", "$controller", FormMethod$formmethod, new { id="$formId", @class="$classname" }))
+{
+    @Html.LabelFor(m => m.$PropertyName)
+    @Html.TextBoxFor(m => m.$PropertyName)
+    @Html.ValidationMessageFor(m => m.$PropertyName)
+}
+                ]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
