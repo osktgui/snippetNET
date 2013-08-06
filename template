@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+
+        <!-- The header contains information describing the snippet. -->
+        <Header>
+          
+          <!-- The Title of the snippet, this will be shown in the snippets manager. -->
+          <Title>Title of yout snippet</Title>
+          
+          <!-- The description of the snippet. -->
+          <Description>Description of the snippet.</Description>
+          
+          <!-- The author of the snippet. -->
+          <Author>Luis Oscátegui</Author>
+          
+          <!-- The set of characters that must be keyed in to insert the snippet. -->
+          <Shortcut>shortcuts</Shortcut>
+          
+          <!-- A URL for more help. -->
+          <HelpUrl>http://domain.com</HelpUrl>
+          
+          <!-- The set of snippet types we're dealing with - either Expansion or -->
+          <SnippetTypes>
+            <SnippetType>Expansion</SnippetType>
+          </SnippetTypes>          
+          
+        </Header>
+      
+        <!-- Now we have the snippet itself. -->
+        <Snippet>
+
+             <!-- Create any declarations that we use in the snippet. -->
+            <Declarations>
+              <Literal>
+                <ID>PropertyName</ID>
+                <ToolTip>Enter the property name</ToolTip>
+                <Default>PropertyName</Default>
+              </Literal>
+              <Literal>
+                <ID>PropertyType</ID>
+                <ToolTip>Enter the property name</ToolTip>
+                <Default>PropertyType</Default>
+              </Literal>
+            </Declarations>
+
+            <!-- Sepecify the code language and the actual snippet content. -->
+            <Code Language="CSharp" Kind="any">
+                <![CDATA[
+
+                    // your snnippet -- Example
+                    snippet.loading($PropertyName, $PropertyType);
+                ]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
