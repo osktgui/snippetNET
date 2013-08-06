@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+
+        <!-- The header contains information describing the snippet. -->
+        <Header>
+          
+          <!-- The Title of the snippet, this will be shown in the snippets manager. -->
+          <Title>Data annotation modal validation</Title>
+          
+          <!-- The description of the snippet. -->
+          <Description>Data validation is a key aspect for developing web application. In Asp.net MVC, we can easily apply validation to web application by using Data Annotation attribute classes to model class. Data Annotation attribute classes are present in System.ComponentModel.DataAnnotations namespace and are availlable to Asp.net projects like Asp.net web application and website, Asp.net MVC, Web forms and also to Entity framework orm models.</Description>
+          
+          <!-- The author of the snippet. -->
+          <Author>Luis Oscátegui</Author>
+          
+          <!-- The set of characters that must be keyed in to insert the snippet. -->
+          <Shortcut>damodalvalidation</Shortcut>
+          
+          <!-- A URL for more help. -->
+          <HelpUrl>http://domain.com</HelpUrl>
+          
+          <!-- The set of snippet types we're dealing with - either Expansion or -->
+          <SnippetTypes>
+            <SnippetType>Expansion</SnippetType>
+          </SnippetTypes>          
+          
+        </Header>
+      
+        <!-- Now we have the snippet itself. -->
+        <Snippet>
+
+             <!-- Create any declarations that we use in the snippet. -->
+            <Declarations>
+              <Literal>
+                <ID>DataType</ID>
+                <ToolTip>Specify the datatype of a property.</ToolTip>
+                <Default>DataType</Default>
+              </Literal>
+              <Literal>
+                <ID>DisplayName</ID>
+                <ToolTip>specify the display name for a property.</ToolTip>
+                <Default>DisplayName</Default>
+              </Literal>
+              <Literal>
+                <ID>DisplayFormat</ID>
+                <ToolTip>specify the display format for a property like different format for Date proerty.</ToolTip>
+                <Default>DisplayFormat</Default>
+              </Literal>
+              <Literal>
+                <ID>Required</ID>
+                <ToolTip>Specify a property as required..</ToolTip>
+                <Default>Required</Default>
+              </Literal>
+              <Literal>
+                <ID>ReqularExpression</ID>
+                <ToolTip>specify the display format for a property like different format for Date proerty.</ToolTip>
+                <Default>ReqularExpression</Default>
+              </Literal>
+              <Literal>
+                <ID>Range</ID>
+                <ToolTip>validate the value of a property with in a specified range of values.</ToolTip>
+                <Default>Range</Default>
+              </Literal>
+              <Literal>
+                <ID>StringLength</ID>
+                <ToolTip>specify min and max length for a string property.</ToolTip>
+                <Default>StringLength</Default>
+              </Literal>
+              <Literal>
+                <ID>MaxLength</ID>
+                <ToolTip>specify max length for a string property.</ToolTip>
+                <Default>MaxLength</Default>
+              </Literal>
+              <Literal>
+                <ID>Bind</ID>
+                <ToolTip>specify fields to include or exclude when adding parameter or form values to model properties.</ToolTip>
+                <Default>Bind</Default>
+              </Literal>
+              <Literal>
+                <ID>ScaffoldColumn</ID>
+                <ToolTip>specify fields for hiding from editor forms.</ToolTip>
+                <Default>ScaffoldColumn</Default>
+              </Literal>
+            </Declarations>
+
+            <!-- Sepecify the code language and the actual snippet content. -->
+            <Code Language="CSharp" Kind="any">
+                <![CDATA[ 
+
+	[Bind(Exclude = "$Bind")]
+	[Required(ErrorMessage = "$Required")] 
+	[DataType(DataType.$DataType)]
+	[Display(Name = "$DisplayName")]
+	[MaxLength(50)]
+	[RegularExpression(@"$ReqularExpression", ErrorMessage = "Please enter correct email")]
+	[ScaffoldColumn(false)]
+	[StringLength(100,MinimumLength=3)]
+	[Range(3000, 10000000,ErrorMessage = "$Range")]
+	
+                ]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
